@@ -2,7 +2,7 @@
 // Created by blair on 18/09/2020.
 //
 
-#include "noun.h"
+#include "../include/noun.h"
 #include <stdio.h>
 #include <string.h>
 #include <stdbool.h>

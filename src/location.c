@@ -4,10 +4,10 @@
 
 #include <stdio.h>
 #include <string.h>
-#include "location.h"
-#include "object.h"
-#include "misc.h"
-#include "noun.h"
+#include "../include/location.h"
+#include "../include/object.h"
+#include "../include/misc.h"
+#include "../include/noun.h"
 
 void executeLook(const char *noun)
 {

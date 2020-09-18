@@ -2,7 +2,7 @@
 // Created by blair on 18/09/2020.
 //
 
-#include "move.h"
+#include "../include/move.h"
 
 #include <stdio.h>
 

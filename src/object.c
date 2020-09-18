@@ -3,7 +3,7 @@
 //
 
 #include <stdio.h>
-#include "object.h"
+#include "../include/object.h"
 
 OBJECT objs[] ={
         {"an open field", "field"   , NULL  },

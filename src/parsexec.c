@@ -4,9 +4,9 @@
 
 #include <stdio.h>
 #include <string.h>
-#include "parsexec.h"
-#include "location.h"
-#include "inventory.h"
+#include "../include/parsexec.h"
+#include "../include/location.h"
+#include "../include/inventory.h"
 
 bool parseAndExecute(char *input)
 {

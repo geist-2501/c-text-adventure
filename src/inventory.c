@@ -2,13 +2,13 @@
 // Created by blair on 18/09/2020.
 //
 
-#include "inventory.h"
+#include "../include/inventory.h"
 
 #include <stdio.h>
-#include "object.h"
-#include "misc.h"
-#include "noun.h"
-#include "move.h"
+#include "../include/object.h"
+#include "../include/misc.h"
+#include "../include/noun.h"
+#include "../include/move.h"
 
 void executeGet(const char *noun)
 {

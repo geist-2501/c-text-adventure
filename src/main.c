@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdbool.h>
-#include "parsexec.h"
+#include "../include/parsexec.h"
 
 static char input[100] = "look around";
 

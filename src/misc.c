@@ -2,7 +2,7 @@
 // Created by blair on 18/09/2020.
 //
 
-#include "misc.h"
+#include "../include/misc.h"
 #include <stdio.h>
 
 int listObjectsAtLocation(OBJECT *location)
