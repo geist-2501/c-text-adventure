@@ -38,3 +38,17 @@ OBJECT *actorHere(void)
 
     return NULL;
 }
+
+OBJECT *getPassage(OBJECT *from, OBJECT *to)
+{
+    OBJECT* obj;
+    for (obj = objs; obj < endOfObjs; obj++)
+    {
+        if (obj->location == from && obj->destination == to)
+        {
+            return obj;
+        }
+    }
+
+    return NULL;
+}
