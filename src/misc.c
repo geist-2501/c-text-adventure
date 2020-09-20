@@ -30,7 +30,7 @@ OBJECT *actorHere(void)
     OBJECT *obj = NULL;
     for(obj = objs; obj < endOfObjs; obj++)
     {
-        if (obj->location == player->location && obj == guard)
+        if (getDistance(player, obj) == distHere && obj == guard)
         {
             return obj;
         }
@@ -51,4 +51,18 @@ OBJECT *getPassage(OBJECT *from, OBJECT *to)
     }
 
     return NULL;
+}
+
+DISTANCE getDistance(OBJECT *from, OBJECT *to)
+{
+    return to == NULL ? distUnknownObject :
+           to == from ? distSelf :
+           to->location == from ? distHeld :
+           to == from->location ? distLocation :
+           to->location == from->location ? distHere :
+           getPassage(from->location, to) != NULL ? distNotHere :
+           to->location == NULL ? distNotHere :
+           to->location->location == from ? distHeldContained :
+           to->location->location == from->location ? distHereContained :
+           distNotHere;
 }

@@ -13,25 +13,30 @@
 void executeGet(const char *noun)
 {
     OBJECT *obj = getVisible("what you want to get", noun);
-    if (obj == NULL)
+
+    switch (getDistance(player, obj))
     {
-        // already handled.
-    }
-    else if (obj == player || obj == guard)
-    {
-        printf("You should not be doing that to %s!\n", obj->description);
-    }
-    else if (obj->location == player)
-    {
-        printf("You already have %s.\n", obj->description);
-    }
-    else if (obj->location == guard)
-    {
-        printf("Ask should ask %s nicely first.\n", obj->location->description);
-    }
-    else
-    {
-        moveObject(obj, player);
+        case distSelf:
+            printf("You should not be doing that to %s!\n", obj->description);
+            break;
+        case distHeld:
+            printf("You already have %s.\n", obj->description);
+            break;
+        case distOverThere:
+            printf("Too far away, move closer.\n");
+            break;
+        case distUnknownObject:
+            // Already handled by getVisible()
+            break;
+        default:
+            if (obj->location == guard)
+            {
+                printf("Ask should ask %s nicely first.\n", obj->location->description);
+            }
+            else
+            {
+                moveObject(obj, player);
+            }
     }
 }
 
